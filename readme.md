@@ -1,2 +1,2 @@
 # ZGAME-1.1
-A minimal game engine written in C/C++ with OpenGL rendering.
+A redesigned and improved version of a minimal game engine written in C/C++ with OpenGL rendering.
