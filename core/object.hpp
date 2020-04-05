@@ -1,11 +1,13 @@
 #include "string.hpp"
+#include "stddef.hpp"
+
 
 namespace zg {
     struct Object {
-        unsigned long int m_id;
+        uint64 m_id;
         virtual string ToString();
 
         Object();
-        Object(unsigned long int p_id);
+        Object(uint64 p_id);
     };
 }
