@@ -1,4 +1,5 @@
 #include "entity.hpp"
+#include "component.hpp"
 
 namespace zg {
     
