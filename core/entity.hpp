@@ -11,5 +11,6 @@ namespace zg {
         std::list<ComponentRef> m_components;
         void AddComponent(ComponentRef);
         void RemoveComponent(ComponentRef);
+        void ClearAll();
     };
 }

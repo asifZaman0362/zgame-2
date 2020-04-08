@@ -14,4 +14,7 @@ namespace zg {
         m_components.remove(comp);
     }
     
+    void Entity::ClearAll() {
+        m_components.clear();
+    }
 }
