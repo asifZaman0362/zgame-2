@@ -1,30 +1,19 @@
 #include "entitymanager.hpp"
+#include "logger.hpp"
+
+
 
 namespace zg {
-
-    std::list<Entity> entities;
-    std::list<Entity> free_entities;
-
-    Entity EntityManager::CreateNew() {
-        auto ref = std::make_shared<EntityType>();
-        entities.push_back(ref);
-        return ref;
+    EntityManager::EntityManager() {
+        m_lastEntity = 0;
     }
 
-    void EntityManager::DestroyEntity(uint64 id) {
-        for (auto& ref : entities) {
-            if (ref->m_id == id) {
-                entities.remove(ref);
-            }
+    Entity EntityManager::Create() {
+        if (m_lastEntity > MAX_ENTITIES) {
+            Logger::LogError(string::format("Entity limit '{i}' reached! Cannot create more entities.", MAX_ENTITIES));
         }
-    }
-
-    void EntityManager::FreeEntity(uint64 id) {
-        for (auto& ref : entities) {
-            if (ref->m_id == id) {
-                free_entities.push_back(ref);
-                entities.remove(ref);
-            }
-        }
+        ComponentList components;
+        m_entities.emplace(++m_lastEntity, components);
+        return m_lastEntity;
     }
 }

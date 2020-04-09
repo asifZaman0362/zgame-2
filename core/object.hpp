@@ -7,6 +7,6 @@ namespace zg {
     struct Object {
         virtual string ToString();
         Object();
-        ulong m_id;
+        uint64 m_id;
     };
 }
