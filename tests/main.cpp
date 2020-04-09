@@ -3,8 +3,8 @@
 
 
 int main() {
-    zg::EntityRef ref = zg::EntityManager::CreateNew();
-    ref->AddComponent(std::make_shared<zg::Component>());
+    zg::Entity ent = zg::EntityManager::CreateNew();
+    ent->AddComponent(std::make_shared<zg::Component>());
 
     int a;
     std::cin >> a;

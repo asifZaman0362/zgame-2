@@ -8,7 +8,7 @@ namespace zg {
     struct Component;
     typedef std::shared_ptr<Component> ComponentRef;
 
-    struct Entity : public Object {
+    struct EntityType : public Object {
         uint64 m_id;
         std::list<ComponentRef> m_components;
         void AddComponent(ComponentRef);

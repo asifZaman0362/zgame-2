@@ -3,18 +3,18 @@
 
 namespace zg {
     
-    void Entity::AddComponent(ComponentRef comp) {
+    void EntityType::AddComponent(ComponentRef comp) {
         for (auto& i : m_components) {
             if (i == comp) return;
         }
         m_components.push_back(comp);
     }
     
-    void Entity::RemoveComponent(ComponentRef comp) {
+    void EntityType::RemoveComponent(ComponentRef comp) {
         m_components.remove(comp);
     }
     
-    void Entity::ClearAll() {
+    void EntityType::ClearAll() {
         m_components.clear();
     }
 }

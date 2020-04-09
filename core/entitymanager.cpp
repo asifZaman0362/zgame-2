@@ -2,11 +2,11 @@
 
 namespace zg {
 
-    std::list<EntityRef> entities;
-    std::list<EntityRef> free_entities;
+    std::list<Entity> entities;
+    std::list<Entity> free_entities;
 
-    EntityRef EntityManager::CreateNew() {
-        auto ref = std::make_shared<Entity>();
+    Entity EntityManager::CreateNew() {
+        auto ref = std::make_shared<EntityType>();
         entities.push_back(ref);
         return ref;
     }
@@ -18,7 +18,7 @@ namespace zg {
             }
         }
     }
-    
+
     void EntityManager::FreeEntity(uint64 id) {
         for (auto& ref : entities) {
             if (ref->m_id == id) {

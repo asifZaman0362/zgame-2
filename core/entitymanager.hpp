@@ -4,11 +4,11 @@
 
 namespace zg {
     
-    typedef std::shared_ptr<Entity> EntityRef;
+    typedef std::shared_ptr<EntityType> Entity;
     
     namespace EntityManager {
 
-        EntityRef CreateNew();
+        Entity CreateNew();
         void FreeEntity(uint64 id);
         void DestroyEntity(uint64 id);
         void AddComponent(ComponentRef);
