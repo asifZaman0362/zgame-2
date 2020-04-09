@@ -1,3 +1,4 @@
+#pragma once
 #include "object.hpp"
 
 namespace zg {
