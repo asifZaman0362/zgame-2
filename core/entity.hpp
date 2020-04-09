@@ -1,5 +1,6 @@
 #pragma once
 #include "object.hpp"
+#include "component.hpp"
 #include <list>
 #include <memory>
 
