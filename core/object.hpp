@@ -6,5 +6,6 @@ namespace zg {
     struct Object {
         virtual string ToString();
         Object();
+        ulong m_id;
     };
 }
