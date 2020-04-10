@@ -1,13 +1,9 @@
-#include "../core/entitymanager.hpp"
+#include "../core/logger.hpp"
 #include <iostream>
 
+using namespace zg;
 
 int main() {
-    zg::Entity ent = zg::EntityManager::CreateNew();
-    ent->AddComponent(std::make_shared<zg::Component>());
-
-    int a;
-    std::cin >> a;
-
+    Logger::LogWarn(string::format("what the %d %s", 2.0, "string"));
     return 0;
 }

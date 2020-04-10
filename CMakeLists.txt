@@ -10,5 +10,6 @@ application/application.hpp application/settings.hpp)
 
 set(SANDBOX tests/main.cpp)
 
-add_library(zgame ${CORE})
-add_executable(zgame-sandbox ${CORE} ${SANDBOX})
+#add_library(zgame ${CORE})
+#add_executable(zgame-sandbox ${CORE} ${SANDBOX})
+add_executable(zgame-test core/logger.hpp core/logger.cpp core/string.hpp core/string.cpp tests/main.cpp)

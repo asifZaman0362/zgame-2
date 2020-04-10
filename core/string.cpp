@@ -210,22 +210,22 @@ string string::format(const char* format, ...) {
     va_list args;
     va_start(args, format);
     for (int i = 0; i < len; i++) {
-        if (format[i] == '{' && format[i+2] == '}') {
+        if (format[i] == '%' && format[i-1] != '\\') {
             switch(format[i+1]) {
                 case 'd':
                     return_string += va_arg(args, double);
-                    i += 2;
+                    i += 1;
                     break;
                 case 'i':
                     return_string += va_arg(args, int);
-                    i += 2;
+                    i += 1;
                     break;
                 case 's':
                     return_string += va_arg(args, const char*);
-                    i += 2;
+                    i += 1;
                     break;
                 default:
-                    Logger::LogError("Wrong formatting or maybe not.");
+                    Logger::LogError("Wrong formatting.");
             }
         } else return_string += format[i];
     }

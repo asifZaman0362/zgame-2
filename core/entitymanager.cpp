@@ -16,4 +16,12 @@ namespace zg {
         m_entities.emplace(++m_lastEntity, components);
         return m_lastEntity;
     }
+
+    template <typename C> void EntityManager::AddComponent(Entity entity, const C& component) {
+        // add component logic
+    }
+
+    template <typename C> void EntityManager::RemoveComponent(Entity entity, const C& component) {
+        // remove component logic
+    }
 }
