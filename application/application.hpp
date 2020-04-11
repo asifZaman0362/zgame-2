@@ -5,6 +5,13 @@
 
 namespace zg {
     struct Application {
+
+        enum ApplicationState {
+            INACTIVE,
+            RUNNING,
+            PAUSED
+        };
+
         Application(const Settings&);
         ~Application();
         uint8 Run();
@@ -18,5 +25,6 @@ namespace zg {
         void Reconfigure(const Settings&);
 
         Settings m_settings;
+        ApplicationState m_state;
     };
 }

@@ -10,7 +10,7 @@ namespace zg {
     }
 
     uint8 Application::Run() {
-
+        m_state = ApplicationState::RUNNING;
     }
 
     uint8 Application::Exit() {
@@ -18,10 +18,10 @@ namespace zg {
     }
 
     void Application::Pause() {
-
+        m_state = ApplicationState::PAUSED;
     }
 
     void Application::Resume() {
-
+        m_state = ApplicationState::RUNNING;
     }
 }
